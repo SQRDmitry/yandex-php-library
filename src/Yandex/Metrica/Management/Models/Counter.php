@@ -47,6 +47,10 @@ class Counter extends Model
     protected $maxDetailedGoals = null;
 
     protected $maxRetargetingGoals = null;
+    
+    protected $createTime = null;
+    
+    protected $updateTime = null;
 
     protected $mappingClasses = [
         'webvisor' => 'Yandex\Metrica\Management\Models\Webvisor',
@@ -64,7 +68,9 @@ class Counter extends Model
         'visit_threshold' => 'visitThreshold',
         'max_goals' => 'maxGoals',
         'max_detailed_goals' => 'maxDetailedGoals',
-        'max_retargeting_goals' => 'maxRetargetingGoals'
+        'max_retargeting_goals' => 'maxRetargetingGoals',
+        'create_time' => 'createTime',
+        'update_time' => 'updateTime',
     ];
 
     /**
@@ -483,5 +489,25 @@ class Counter extends Model
     {
         $this->maxRetargetingGoals = $maxRetargetingGoals;
         return $this;
+    }
+    
+    /**
+     * Retrieve the createTime property
+     *
+     * @return string|null
+     */
+    public function getCreateTime()
+    {
+        return $this->createTime;
+    }
+
+    /**
+     * Retrieve the updateTime property
+     *
+     * @return string|null
+     */
+    public function getUpdateTime()
+    {
+        return $this->updateTime;
     }
 }
